@@ -39,7 +39,7 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - redis-server
+      - mongodb
     networks:
       kevin-network:
 networks:

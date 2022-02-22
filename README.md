@@ -2,20 +2,24 @@
 
 ## Description
 
-This project is a project for testing how to use multiple servers, how to make them communicating between them using event, message `Redis`, `RabbitMQ` or HTTP request. I also use this project for exploring the different image that you can find on the `docker` website and how to use them.
+This template is useful for starting a new docker project with a docker-compose having 3 services :
 
-## Experiences
-
-- **Server1 && Server2:** Communication between server using Redis
-- **Server3:** Connection of the server to the container `mongodb`
-- **Server4 && Server5:** Communication between server using Axios and http request
-- **Server6 && Server7:** Communication between server using RabbitMQ
+- **nginx**: for the reverse proxy using the `jwilder` image from Docker
+- **mongodb**: for using it has a fresh database using the latest image of `mongo`
+- **server1**: for a small start project using `Express`
 
 ## Docker-compose
 
 ```bash
 $ docker-compose down
 $ docker-compose up -d --build
+```
+
+The command has been added in the package.json, so it can also be start and stop with :
+
+```bash
+$ npm run start
+$ npm run stop
 ```
 
 ## Nginx
