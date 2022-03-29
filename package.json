@@ -11,8 +11,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "docker-compose up -d --build",
-    "stop": "docker-compose down"
+    "start": "docker-compose --env-file ./env/dev.env up -d --build",
+    "start:prod": "docker-compose --env-file ./env/prod.env up -d --build",
+    "stop": "docker-compose --env-file ./env/dev.env down",
+    "stop:prod": "docker-compose --env-file ./env/prod.env down"
   },
   "repository": {
     "type": "git",
