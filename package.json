@@ -12,7 +12,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "docker-compose --env-file ./env/dev.env up -d --build",
-    "start:prod": "docker-compose --env-file ./env/prod.env up -d --build",
+    "start:prod": "docker-compose --env-file ./env/prod.env up -d --build --scale server1=2",
     "stop": "docker-compose --env-file ./env/dev.env down",
     "stop:prod": "docker-compose --env-file ./env/prod.env down"
   },

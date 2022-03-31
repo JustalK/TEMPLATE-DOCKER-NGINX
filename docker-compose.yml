@@ -36,12 +36,12 @@ services:
       kevin-network:
   server1:
     build: ./server1
-    container_name: labo-server1
+    container_name: ${CONTAINER_NAME_SERVER_1}
     environment:
       - VIRTUAL_HOST=${VIRTUAL_HOST_SERVER_1}
       - VIRTUAL_PORT=${VIRTUAL_PORT_SERVER_1}
     ports:
-      - "${VIRTUAL_PORT_SERVER_1}:${VIRTUAL_PORT_SERVER_1}"
+      - "${VIRTUAL_PORT_SERVER_1}"
     depends_on:
       - mongodb
     healthcheck:
