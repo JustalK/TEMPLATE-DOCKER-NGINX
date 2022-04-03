@@ -28,7 +28,7 @@ services:
         - "${MONGO_PORT}:28017"
     command: mongod --port ${MONGO_PORT}
     healthcheck:
-      test: mongo --port ${MONGO_PORT} --eval "db.adminCommand('ping')"
+      test: mongo --port ${MONGO_PORT} --eval "db.adminCommand('ping')" || exit 1
       interval: 30s
       timeout: 10s
       retries: 3
